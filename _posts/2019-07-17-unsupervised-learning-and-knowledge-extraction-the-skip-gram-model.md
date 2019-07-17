@@ -18,4 +18,15 @@ Clearly, just producing a bunch of graphs isn't extracting knowledge as there's 
 In this article I will focus on only one very specific *knowledge extraction* application : drawing correspondances and linking different concepts together by using the skip-gram model.
 
 ### A brief foreword about the skip-gram model
-This article won't
+I've been inspired to write this article after having read [this article](https://www.nature.com/articles/s41586-019-1335-8) published in nature only a few weeks back. Needless to say, the efficiency of the methods and their findings impressed me greatly. So I chose to dig a little bit deeper and realized that they only used... the skip-gram model. If you're in any way familiar with NLP techniques, the skip-gram algorithm is the first building block for word embeddings such as word2vec. I won't spend too much time explaining the ins and outs of the technique as articles such as [this one](http://mccormickml.com/2016/04/19/word2vec-tutorial-the-skip-gram-model/) already do a fantastic job, but essentially, we want to train a shallow network to recognize for any given word, the probability of other words surrounding it. The trained network is a shallow 2-layer network with one-hot encoded inputs, the input layer will, as such, contain as many neurons as there is words in our vocabulary, a bottleneck layer that has less neurons than the size of our vocabulary and an output layer with as many neurons as the input layer. Our network will, as such, resemble an autoencoder network :
+![Image of an autoencoder architecture](http://mccormickml.com/assets/word2vec/output_weights_function.png)
+*credits : Jeremy Jordan
+
+Once the network is trained to recognize neighbouring words, we keep the weights of the bottleneck layer as vectors to represent our words. These so-called word embeddings will have many interesting properties, namely interesting relationships between words "of the same kind", allowing us to draw analogies from the learned representation.
+![Typical example for word2vec word embedding](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQE-xyMuWa1z7JEMsxaxJXPYq7T4Tfz7M922AsaWAa3P92KOPGgQQ)
+
+Though there's of course many technical difficulties associated with the training of such a model (hint : count the number of parameters when the vocabulary is large), the fact still remains that it's deceptively simple and... unsupervised! You don't need human input for the machine to learn a representation. Well, that's not exactly true as a lot of data cleaning will have to be performed before any training can start and some manual tweaking might be required eventually, but you don't need to go through the harduous process of labelling examples, building ontologies, relationship graphs, etc...
+
+Now, the idea of using embeddings to draw analogies is nothing new and though I'm glad the aforementioned article brought it to my attention, I can't reasonably go on without talking about a few other (arguably more fleshed out) pieces of work that the authors left out :
+* [Automated Cognome Construction and Semi-automated Hypothesis Generation](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3376233/) : In this paper, the authors build a semi-automated hypothesis generation framework mixing both clustering methods and logical inference tools to draw
+* [](https://archive.org/details/Law2Vec)
