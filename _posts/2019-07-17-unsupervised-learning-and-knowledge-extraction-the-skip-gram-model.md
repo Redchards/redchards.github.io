@@ -29,4 +29,6 @@ Though there's of course many technical difficulties associated with the trainin
 
 Now, the idea of using embeddings to draw analogies is nothing new and though I'm glad the aforementioned article brought it to my attention, I can't reasonably go on without talking about a few other (arguably more fleshed out) pieces of work that the authors left out :
 * [Automated Cognome Construction and Semi-automated Hypothesis Generation](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3376233/) : In this paper, the authors build a semi-automated hypothesis generation framework mixing both clustering methods and logical inference tools to draw
-* [](https://archive.org/details/Law2Vec)
+* [Law2Vec](https://archive.org/details/Law2Vec) : I can't find the original paper, but it's cited in many cases as being the first to apply the skip-gram model to unstructured documents (in this case, korean legal documents). I'd be extremely interested to know more about it, if anybody has more information don't hesitate to e-mail me!
+
+Many people will argue that the authors' work isn't anything new, which is true, but I will say that they went up and above to provide us with the original data as well as [the code](https://github.com/materialsintelligence/mat2vec) for their model, which allows us to replicate their findings
