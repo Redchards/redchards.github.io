@@ -79,7 +79,7 @@ The validity of this claim has yet to be established through practical applicati
 If you've read the article, you might've noticed that I completely skipped the comparison of the DFT ranking with the authors' method ranking as well as the technical details of the method. It is indeed on purpose as the former is ancdotal and of lesser interest and the latter is way too unweildy to be included in this summary.
 
 ### Conclusion
-While it has been commonly known for a long time that word embeddings contained semantic and syntactic information about language, works making use of their wealth of information beyond simple correspondances and analogies have been rather scarce. The author, though understandably optimistic, stay careful and only mentioning usages aimed at assisting scientists in their research, even mentioning that :
+While it has been commonly known for a long time that word embeddings contained semantic and syntactic information about language, works making use of their wealth of information beyond simple correspondances and analogies have been rather scarce. The authors, though understandably optimistic, remain cautious, exemplified by the fact that they make no mention of any use for their model outside of scientific research, going so far as to mention that :
 
 > The success of our unsupervised approach can partly be attributed to the choice of the training corpus. The main purpose of abstracts is to communicate information in a concise and straightforward manner, avoiding unnecessary words that may increase noise in embeddings during training.
 
