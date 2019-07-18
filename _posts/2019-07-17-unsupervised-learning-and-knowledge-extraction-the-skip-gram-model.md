@@ -87,4 +87,4 @@ The information to noise ratio can be pretty low in most common corpus and that'
 
 > Scientific progress relies on the efficient assimilation of existing knowledge in order to choose the most promising way forward and to minimize re-invention. As the amount of scientific literature grows, this is becoming increasingly difficult, if not impossible, for an individual scientist. We hope that this work will pave the way towards making the vast amount of information found in scientific literature accessible to individuals in ways that enable a new paradigm of machine-assisted scientific breakthroughs.
 
-I would even argue that such technique could become a much more prominent tool in the data miner toolbox once it has been refined and fleshed out. Something that is certain is that the use-cases for this type of knowledge extraction are plenty.
+I would even argue that such a technique could become a much more prominent tool in the data miner toolbox once it has been refined and fleshed out. Something that is certain is that the use-cases for this type of knowledge extraction are plenty.
