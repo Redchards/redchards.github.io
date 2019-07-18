@@ -42,7 +42,7 @@ Many people will argue that the authors' work isn't anything new, which is true,
 The authors used the skipgram variant of the word2vec model with a 200 dimensions embedding and trained it on 3.3 million scientific abstracts (no full text), providing them with a vocabulary of about 500,000 words.
 
 To measure the performances of their model, the team tested it on multiple diverse tasks
-* Material science analogies (ex : pressure - Pa + Hz = frequency)
+* Material science analogies (ex : $$pressure - Pa + Hz = frequency$$)
 * Prediction of a material group
 * Prediction of which material was going to be studied as a thermoelectric in the future using "historical data" (that is to say, only using data prior to the material being studied and classified as a thermoelectric)
 
