@@ -22,7 +22,7 @@ I've been inspired to write this article after having read [this article](https:
 ![Image of an autoencoder architecture](https://www.jeremyjordan.me/content/images/2018/03/Screen-Shot-2018-03-06-at-3.17.13-PM.png)
 *credits : Jeremy Jordan*
 
-Once the network is trained to recognize neighbouring words, we keep the weights of the bottleneck layer as vectors to represent our words. These so-called word embeddings will have many interesting properties, namely interesting relationships between words "of the same kind", allowing us to draw analogies from the learned representation.
+Once the network is trained to recognize neighbouring words, we keep the weights of the bottleneck layer as vectors to represent our words. These so-called word embeddings will have many interesting properties, namely interesting relationships between words "of the same kind", allowing us to draw analogies from the learned representation. As the words are embedded in a vector space, we can use very basic mathematical operations to retrieve simple information, for example $$king - man = queen$$ or measuring the similarity of words, using the cosine similarity for example.
 ![Typical example for word2vec word embedding](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQE-xyMuWa1z7JEMsxaxJXPYq7T4Tfz7M922AsaWAa3P92KOPGgQQ)
 
 Though there's of course many technical difficulties associated with the training of such a model (hint : count the number of parameters when the vocabulary is large), the fact still remains that it's deceptively simple and... unsupervised! You don't need human input for the machine to learn a representation. Well, that's not exactly true as a lot of data cleaning will have to be performed before any training can start and some manual tweaking might be required eventually, but you don't need to go through the harduous process of labelling examples, building ontologies, relationship graphs, etc...
@@ -31,4 +31,31 @@ Now, the idea of using embeddings to draw analogies is nothing new and though I'
 * [Automated Cognome Construction and Semi-automated Hypothesis Generation](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3376233/) : In this paper, the authors build a semi-automated hypothesis generation framework mixing both clustering methods and logical inference tools to draw
 * [Law2Vec](https://archive.org/details/Law2Vec) : I can't find the original paper, but it's cited in many cases as being the first to apply the skip-gram model to unstructured documents (in this case, korean legal documents). I'd be extremely interested to know more about it, if anybody has more information don't hesitate to e-mail me!
 
-Many people will argue that the authors' work isn't anything new, which is true, but I will say that they went up and above to provide us with the original data as well as [the code](https://github.com/materialsintelligence/mat2vec) for their model, which allows us to replicate their findings
+Many people will argue that the authors' work isn't anything new, which is true, but I will say that they went up and above to provide us with the original data as well as [the code](https://github.com/materialsintelligence/mat2vec) for their model, which allows us to replicate their findings.
+
+### Summary of the paper
+*Disclaimer : though the paper can be accessed through [SharedIt](https://www.springernature.com/gp/researchers/sharedit), it is not technically "open", so I will refrain from including tables/graphs from it.*
+
+The authors used the skipgram variant of the word2vec model with a 200 dimensions embedding and trained it on 3.3 million scientific abstracts, providing them with a vocabulary of about 500,000 words.
+
+To measure the performances of their model, the team tested it on multiple diverse tasks
+* Material science analogies (ex : pressure - Pa + Hz = frequency)
+* Prediction of a material group
+* Prediction of which material was going to be studied as a thermoelectric in the future using "historical data" (that is to say, only using data prior to the material being discovered as a thermoelectric)
+
+The first task can be achieved in a fairly straightforward way using a test database of pairs, the first element being the formula to test and the second element being the expected response. Below are all the categories of relationship tested :
+* Chemical element names
+* Crystal symmetries
+* Crystal structure names
+* Elemental crystal structures
+* Principal oxides
+* Units
+* Mangetic properties
+* Applications
+* Grammar
+
+The answer is considered correct if and only if it corresponds exactly to the expected response, homonyms are, as such, not considered valid. The model obtains an average accuracy of 60.1%, though with a rather wide standard deviation, performing the worst on *Crystal structure names* (18.7%) and the best on *Chemical element names* (71.4%). The types of relationships on which the model perform the best (*Chemical element names* and *Grammar*) are disproportionally represented in the validation database, explaining the rather high average score.
+
+It's unclear to me as to how the authors predicted the material classes however, but my simple guess would be that they used a simple network model using their embedding as inputs. A neat finding is that materials from the same group (metalloid, noble gas, etc...) tend to cluster together.
+
+All that being said, the main focus of this paper (and the achievement that made the headlines) was the last task : to predict which material was gonna be studied as being a thermoelectric material only based on prior  historical knowledge. For instance, they trained the model only using scientific abstract from 1922 to 2001 and then ranks the 50 best candidates for thermoelectric materials. They found that these materials were 8 times more likely to be studied as thermoelectrics in the 5 years after the time window the model was trained on than any randomly chosen unstudied material from the time and 3 times more than with a non null [density functional theory](https://en.wikipedia.org/wiki/Density_functional_theory) value. These predicted words never appeared side by side with a term explicitly linked to thermoelectric materials ('ZT', 'zT', 'seebeck', 'thermoelectric', 'thermoelectrics', 'thermoelectrical', ...)! 
