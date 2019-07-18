@@ -9,7 +9,7 @@ tags:
   - word2vec
   - knowledge_extraction
 comments: true
-image: /img/skip_gram_nature/image
+image: /img/skip_gram_nature/image.png
 ---
 
 ### Introduction
