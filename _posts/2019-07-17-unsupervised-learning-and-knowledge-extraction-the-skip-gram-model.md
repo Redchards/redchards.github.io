@@ -34,7 +34,7 @@ Now, the idea of using embeddings to draw analogies is nothing new and though I'
 Many people will argue that the authors' work isn't anything new, which is true, but I will say that they went up and above to provide us with the original data as well as [the code](https://github.com/materialsintelligence/mat2vec) for their model, which allows us to replicate their findings.
 
 ### Summary of the paper
-*Disclaimer : though the paper can be accessed through [SharedIt](https://www.springernature.com/gp/researchers/sharedit), it is not technically "open", so I will refrain from including tables/graphs from it.*
+*Disclaimer : though the paper can be accessed through [SharedIt](https://www.springernature.com/gp/researchers/sharedit), it is not technically "open", so I will refrain from including too many tables/graphs from it.*
 
 The authors used the skipgram variant of the word2vec model with a 200 dimensions embedding and trained it on 3.3 million scientific abstracts, providing them with a vocabulary of about 500,000 words.
 
