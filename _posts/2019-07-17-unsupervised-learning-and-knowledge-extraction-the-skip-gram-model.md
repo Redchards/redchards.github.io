@@ -45,7 +45,7 @@ To measure the performances of their model, the team tested it on multiple diver
 * Prediction of a material group
 * Prediction of which material was going to be studied as a thermoelectric in the future using "historical data" (that is to say, only using data prior to the material being studied and classified as a thermoelectric)
 
-The first task can be achieved in a fairly straightforward manner using a test database of pairs, the first element being the formula to test and the second element being the expected response. Below are all the categories of relationship tested :
+The first task can be achieved in a fairly straightforward manner using a test database of pairs, the first element being the formula to test and the second element being the expected response. Below are all the categories of relationships tested :
 * Chemical element names
 * Crystal symmetries
 * Crystal structure names
