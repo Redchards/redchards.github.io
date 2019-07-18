@@ -1,10 +1,10 @@
 ---
 layout: post
 published: true
+subtitle: Towards machine learning discovery
 title: 'Unsupervised learning and knowledge extraction : the skip-gram model'
 tags: [unsupervised_learning, skip-gram, word2vec, knowledge_extraction]
 ---
-## Unsupervised learning and knowledge extraction : the skip-gram model
 
 ### Introduction
 With the growing amount of data generated throughout the world every single day, both public and private, whether the information leaves the wall of organizations, crosses borders or is kept in secrecy, data mining is becoming ever so more relevant. Though the concept of data analysis is far from being a recent phenomenon, we've been, in fact, able to trace it back to ancient Egypt, the sheer quantity of data generated and the computational power at our disposal allows us to leverage novel techniques and extract knowledge from our mainly unstructured data. 
