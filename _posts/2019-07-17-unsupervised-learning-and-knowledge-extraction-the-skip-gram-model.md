@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: 'Unsupervised learning and knowledge extraction : the skip-gram model'
 ---
 ## Unsupervised learning and knowledge extraction : the skip-gram model
