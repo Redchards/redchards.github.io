@@ -2,7 +2,7 @@
 layout: post
 published: true
 title: 'Unsupervised learning and knowledge extraction : the skip-gram model'
-tags:[unsupervised_learning, skip-gram, word2vec, knowledge_extraction]
+tags: [unsupervised_learning, skip-gram, word2vec, knowledge_extraction]
 ---
 ## Unsupervised learning and knowledge extraction : the skip-gram model
 
