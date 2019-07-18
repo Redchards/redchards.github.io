@@ -8,6 +8,8 @@ tags:
   - skip-gram
   - word2vec
   - knowledge_extraction
+comments: true
+image: /img/skip_gram_nature/image
 ---
 
 ### Introduction
