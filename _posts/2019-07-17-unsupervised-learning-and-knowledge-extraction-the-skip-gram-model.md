@@ -1,6 +1,6 @@
 ---
 layout: post
-published: true
+published: false
 title: 'Unsupervised learning and knowledge extraction : the skip-gram model'
 ---
 ## Unsupervised learning and knowledge extraction : the skip-gram model
@@ -63,3 +63,5 @@ It's unclear to me as to how the authors predicted the material classes however,
 All that being said, the main focus of this paper (and the achievement that made the headlines) was the last task : to predict which material was gonna be studied as being a thermoelectric material only based on prior  historical knowledge. For instance, they trained the model only using scientific abstract from 1922 to 2001 and then ranks the 50 best candidates for thermoelectric materials. They found that these materials were 8 times more likely to be studied as thermoelectrics in the 5 years after the time window the model was trained on than any randomly chosen unstudied material from the time and 3 times more than with a non null [density functional theory](https://en.wikipedia.org/wiki/Density_functional_theory) value. These predicted words never appeared side by side with a term explicitly linked to thermoelectric materials ('ZT', 'zT', 'seebeck', 'thermoelectric', 'thermoelectrics', 'thermoelectrical', ...)! Why these materials were still detected as being related to thermoelectrics can be understood by studying some of their connections to the actual term, some of which are laid out in the diagram below :
 
 ![relationship diagram for predicted thermoelectric materials](https://redchards.github.io/img/skip_gram_nature/relationship_graph.png)
+
+Though some of these relations were well-known even at the time of the historical articles being published, when the elements leading to the conclusions are
