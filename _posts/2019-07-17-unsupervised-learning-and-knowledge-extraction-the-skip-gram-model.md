@@ -3,7 +3,11 @@ layout: post
 published: true
 subtitle: Towards machine learning discovery
 title: 'Unsupervised learning and knowledge extraction : the skip-gram model'
-tags: [unsupervised_learning, skip-gram, word2vec, knowledge_extraction]
+tags:
+  - unsupervised_learning
+  - skip-gram
+  - word2vec
+  - knowledge_extraction
 ---
 
 ### Introduction
@@ -14,12 +18,12 @@ In this article, I will use the term *knowledge extraction* instead of *data min
 
 > knowledge [noun] : understanding of or information about a subject that you get by experience or study, either known by one person or by people generally
 
-Clearly, just producing a bunch of graphs isn't extracting knowledge on its own as there's no real *understanding*. It might help people gain knowledge about a particular set of data, but I would argue that we aren't extracting knowledge directly. Something like *process mining* for example is *knowledge extraction* as it will get a direct understanding of the underlying process(es) that came to generate the data we fed it.
+Clearly, just producing a bunch of graphs isn't extracting knowledge on its own as there's no real *understanding*. It might help people gain knowledge about a particular set of data, but I would argue that we aren't extracting knowledge directly. Something like *process mining* for example is *knowledge extraction* as it will get a direct understanding of the underlying process(es) that came to generate the data we fed it. Now, you could argue that the definition states that knowledge can also be a piece of information, there is the issue of the granularity of this information though : when people say they want to extract knowledge from data, they most of the time aren't referring to being thrown raw numbers.
 
 In this article I will focus on only one very specific *knowledge extraction* application : drawing correspondances and linking different concepts together by using the skip-gram model.
 
 ### A brief foreword about the skip-gram model
-I've been inspired to write this article after having read [this article](https://www.nature.com/articles/s41586-019-1335-8) published in nature only a few weeks back. Needless to say, the efficiency of the method and their findings impressed me greatly. So, I chose to dig a little bit deeper and realized that they only used... the skip-gram model. If you're in any way familiar with NLP techniques, you probably have heard of word embeddings. Well, the skip-gram algorithm is the first building block for creating word embeddings and is used as the basis for many models such as the well-known word2vec. I won't spend too much time explaining the ins and outs of the technique as articles such as [this one](http://mccormickml.com/2016/04/19/word2vec-tutorial-the-skip-gram-model/) already do a fantastic job, but essentially, we want to train a shallow network to recognize, for any given word, the probability of other words surrounding it. The trained network is a shallow 2-layer network with one-hot encoded inputs. The input layer will, as such, contain as many neurons as there is words in our vocabulary. We then use a bottleneck layer that has less neurons than the size of our vocabulary and an output layer with as many neurons as the input layer. In the end, our network will resemble an autoencoder network :
+I've been inspired to write this article after having read [this article](https://www.nature.com/articles/s41586-019-1335-8) published in Nature only a few weeks back. Needless to say, the efficiency of the method and their findings impressed me greatly. So, I chose to dig a little bit deeper and realized that they only used... the skip-gram model. If you're in any way familiar with NLP techniques, you probably have heard of word embeddings. Well, the skip-gram algorithm is the first building block for creating word embeddings and is used as the basis for many models such as the well-known word2vec. I won't spend too much time explaining the ins and outs of the technique as articles such as [this one](http://mccormickml.com/2016/04/19/word2vec-tutorial-the-skip-gram-model/) already do a fantastic job, but essentially, we want to train a shallow network to recognize, for any given word, the probability of other words surrounding it. The trained network is a shallow 2-layer network with one-hot encoded inputs. The input layer will, as such, contain as many neurons as there is words in our vocabulary. We then use a bottleneck layer that has less neurons than the size of our vocabulary and an output layer with as many neurons as the input layer. In the end, our network will resemble an autoencoder network :
 
 ![Image of an autoencoder architecture](https://www.jeremyjordan.me/content/images/2018/03/Screen-Shot-2018-03-06-at-3.17.13-PM.png)
 *credits : Jeremy Jordan*
