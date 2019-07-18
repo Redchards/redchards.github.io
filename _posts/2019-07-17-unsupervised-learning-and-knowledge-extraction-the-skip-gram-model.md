@@ -64,4 +64,21 @@ All that being said, the main focus of this paper (and the achievement that made
 
 ![relationship diagram for predicted thermoelectric materials](https://redchards.github.io/img/skip_gram_nature/relationship_graph.png)
 
-Though some of these relations were well-known even at the time of the historical articles being published, when the elements leading to the conclusions are
+Though some of these relations were well-known even at the time of the historical articles being published, when the elements leading to the conclusions are disseminated across hundreds of articles, humans have a hard time drawing parallels. Moreover, throughout the paper the authors make a point to stress out that the model has **no** field knowledge whatsoever and wasn't enriched with expert information in any way, shape or form. According to the authors :
+
+> This demonstrates that word embeddings go beyond trivial compositional or structural similarity and have the potential to unlock latent knowledge not directly accessible to human scientists.
+
+The validity of this claim has yet to be established through practical applications, but it's definitely an interesting way forward.
+
+If you've read the article, you might've noticed that I completely skipped the comparison of the DFT ranking with the authors' method ranking as well as the technical details of the method. It is indeed on purpose as the former is ancdotal and of lesser interest and the latter is way too unweildy to be included in this summary.
+
+### Conclusion
+While it has been commonly known for a long time that word embeddings contained semantic and syntactic information about language, works making use of their wealth of information beyond simple correspondances and analogies have been rather scarce. The author, though understandably optimistic, stay careful and only mentioning usages aimed at assisting scientists in their research, even mentioning that :
+
+> The success of our unsupervised approach can partly be attributed to the choice of the training corpus. The main purpose of abstracts is to communicate information in a concise and straightforward manner, avoiding unnecessary words that may increase noise in embeddings during training.
+
+The information to noise ratio can be pretty low in most common corpus and that's not event counting spelling errors. For example, when I trained a word2vec model on the Amazon review corpus and tried to find the top 10 most common words, I got presented with words such as "phonethis", "phonethe", "phoneit", which are obvious missing spaces cause by a simple typo. The team then concludes with a rather edifying statement :
+
+> Scientific progress relies on the efficient assimilation of existing knowledge in order to choose the most promising way forward and to minimize re-invention. As the amount of scientific literature grows, this is becoming increasingly difficult, if not impossible, for an individual scientist. We hope that this work will pave the way towards making the vast amount of information found in scientific literature accessible to individuals in ways that enable a new paradigm of machine-assisted scientific breakthroughs.
+
+I would even argue that such technique could become a much more prominent tool in the data miner toolbox once it has been refined and fleshed out. Something that is certain is that the use-cases for this type of knowledge extraction are plenty.
